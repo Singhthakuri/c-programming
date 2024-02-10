@@ -1,5 +1,5 @@
  C- programming Assignments 
- 
+   
 1 wap to determine the input number is divisible by 5 or not 
 #include<stdio.h>
 #include<conio.h>
