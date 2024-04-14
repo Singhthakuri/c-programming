@@ -1404,3 +1404,498 @@ for ( i = 1; i <=5; i++)
 }
     return 0;
 }
+// strings
+/* 
+ Q.n 1  To find the length of the string 
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char myName[20];
+int len;
+printf("Enter your name: ");
+gets(myName);
+len=strlen(myName);
+printf("Length of a String is %d",len);
+return 0;
+}
+
+Q.N 2 to copy one string to another string 
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char hisName[20],heSay[20];
+printf("Enter his name: ");
+gets(hisName);
+strcpy(heSay,hisName);
+printf("Copied string from hisName is : %s",heSay);
+ return 0;
+}
+
+Q.N 3 to concate two string
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char firstName[20],lastName[20],fullName[20];
+printf("Enter your first name: ");
+gets(firstName);
+printf("Enter your last name : ");
+gets(lastName);
+strcpy(fullName,strcat(firstName, lastName));
+printf("His full name is : %s",fullName);
+    return 0;
+}
+
+Q.n 4 To compare two strings
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char string1[13],string2[23];
+int result;
+printf("Enter First String: ");
+gets(string1);
+printf("Enter second String: ");
+gets(string2);
+result=strcmp(string1,string2);     //if str1==str2 then 0 output
+printf("The result is :%d",result);  // if str1 >str2 then 1
+    return 0;                                            // if str1<str2 then -1
+}
+
+Q.N 5 to convert uppercase to lowercase
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char lowerCase[15];
+printf("Enter any string in Lowercase:");
+gets(lowerCase);
+printf("The uppercase of %s is: ",lowerCase);
+puts(strupr(lowerCase));
+  return 0;
+}
+
+Q.N 6 to convert uppercase to lowercase
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char upperCase[20];
+printf("Enter string in Uppercase: ");
+gets(upperCase);
+printf("The lowercase of %s is : ",upperCase);
+puts(strlwr(upperCase));
+  return 0;
+}
+
+Q.n to find the total numer of the alphabets , digits and the special in entered string
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char anyString[30];
+int alpha=0,digit=0,special=0;
+printf("Enter any string: ");
+gets(anyString);
+for(int i=0;i<strlen(anyString);i++)
+{
+    if((anyString[i]>='a' && anyString[i]<='z') || (anyString[i]>='A' && anyString[i]<='Z'))
+    {
+        alpha++;
+    }
+    else if(anyString[i] >='0' && anyString[i] <= '9')
+    {
+        digit++;
+    }
+    else
+    {
+        special++;
+    }
+} 
+printf("Total alphabets are :%d\n",alpha);
+printf("Total digits  are :%d\n",digit);
+printf("Total special characters are :%d\n",special);
+    return 0;
+}
+
+Q.N to to count total number of vowel and consonatn using functions 
+#include<stdio.h>
+#include<string.h>
+int main() 
+{ char string1[20];
+int vowel=0,consonant=0;
+printf("Enter any string: ");
+gets(string1);
+strlwr(string1);
+for(int i=0;i<strlen(string1);i++)
+{
+    if((string1[i]=='a')|| (string1[i]=='e') || (string1[i]=='i') || (string1[i]=='o') || (string1[i]=='u'))
+    {
+        vowel++;
+    }
+    else
+    {
+        consonant++;
+    }
+}
+printf("Total vowel in %s is: %d\n",string1,vowel);
+printf("Total consonant in %s is: %d",string1,consonant);
+    return 0;
+}
+
+
+Q.N 9 is reamaning to do 
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char name[30]; 
+int word;
+printf("Enter your name: ");
+gets(name);
+for(int i=0;i<strlen(name);i++)
+{
+    if((name[i]!=' ') || (name[i]!=' \0' ))
+    {
+        word++;
+    } 
+    else
+    {
+break;
+    }
+}
+printf("Total numbers in word are: %d",word);
+
+    return 0;
+}
+
+Q.N  10 to reverse a string
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char name[30],rev[30];
+printf("Enter your name: ");
+gets(name);
+strcpy(rev,strrev(name));
+printf("Reverse is : ");
+puts(rev);
+    return 0;
+    }
+
+Q.N 11. this is the program to find the string is palindrome  or not 
+#include<stdio.h>
+#include<string.h>
+int main()
+{ 
+ char enterstring[20],copies[20];
+printf("Enter any string: ");
+gets(enterstring);
+strcpy(copies,enterstring);
+if(strcmp(enterstring,strrev(copies))==0)
+{
+    printf("Enter string is palindrome");
+}
+else{
+    printf("Enter string is not palindrome");
+}
+return 0;
+} 
+
+Q.N 12  to count totl number of the characters in entered  
+#include<stdio.h>
+#include<string.h>
+int main()
+{ char anyString[30];
+int alpha=0,digit=0,special=0,total=0;
+printf("Enter any string: ");
+gets(anyString);
+for(int i=0;i<strlen(anyString);i++)
+{
+    if((anyString[i]>='a' && anyString[i]<='z') || (anyString[i]>='A' && anyString[i]<='Z'))
+    {
+        alpha++;
+    }
+    else if(anyString[i] >='0' && anyString[i] <= '9')
+    {
+        digit++;
+    }
+    else
+    {
+        special++;
+    }
+} 
+printf("Total alphabets are :%d\n",alpha);
+printf("Total digits  are :%d\n",digit);
+printf("Total special characters are :%d\n",special);
+total+=alpha+digit+special;
+printf("Total character in the string are:  %d",total);
+    return 0;
+}  
+
+13 wap to sort the Entered name in ascending order
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{ 
+    int n,i,j;
+    printf("Enter number of empolyee: ");
+    scanf("%d",&n);
+    char name[20][20],temp[30];
+    for(i=0; i<n; i++)
+    {
+        gets(name[i]);
+    }
+    for ( i = 0; i < n; i++)
+    {
+        for( j = i+1; j < n; j++)
+        {
+                if(strcmp(name[i],name[j])>0)
+                {
+                    strcpy(temp,name[j]);
+                    strcpy(name[j],name[i]);
+                    strcpy(name[i],temp);
+                }
+        }  
+    }
+    printf("printing the names in ascendng order are : \n");
+    for(i=0; i<n; i++)
+    {
+        puts(name[i]);
+    }
+    return 0;
+}  */
+
+// functions
+
+//lab sheet 08 
+/*
+Q.N 1 finding the sum of the two entered numbers 
+#include<stdio.h>
+int sum(int , int);
+int main()
+{ int a,b;
+printf("Enter the value of a and b: ");
+scanf("%d%d",&a,&b);
+int z=sum(a,b);
+printf("The sum of the numbers is %d",z);
+    return 0;
+}
+int sum(int x,int y)
+{ int s;
+s=x+y;
+return s;
+}
+Q.n 2 finding the area and the perimeter of the rectangle
+#include<stdio.h>
+int area(){
+    int l,b;
+printf("Enter the length and breadth: ");
+scanf("%d%d",&l,&b);
+return l*b;
+}
+int perimeter()
+{
+    int l,b;
+    printf("Enter the length and the breadth: ");
+    scanf("%d%d",&l,&b);
+    return 2*(l+b);
+}
+int main()
+{
+printf("The area of the rectangle is %d \n",area());
+    printf("The perimeter of the rectangle is %d\n",perimeter());
+return 0;
+}
+
+Q.N. 3 simple intrest 
+#include<stdio.h>
+float simpleIntrest(int, int, float );
+int main()
+{ int p,t;
+float  r;
+printf("Enter p t and rate: ");
+scanf("%d%d%f",&p,&t,&r);
+simpleIntrest(p,t,r);
+return 0;
+}
+float simpleIntrest(int x, int y , float z)
+{
+float c;
+   c=(x*y*z)/100;
+    printf("The simple intrest is :  %.2f",c);
+}
+
+Q.N 4 to find the enter number is odd or the even
+#include<stdio.h>
+void number(int);
+int main()
+{ int n;
+printf("Enter the numbe to find it is odd or even: ");
+scanf("%d",&n);
+number(n);
+return 0;
+}
+void number(int x)
+{
+    if(x%2==0)
+    {
+        printf("Enter number is Even");
+    }
+    else
+    {
+        printf("Enter number is Odd");
+    }
+}
+
+Q.N 5 to find whether the input number is prime or not 
+#include<stdio.h>
+void numCheck(int);
+int main()
+{
+int a;
+printf("Enter any number to check it is prime or not: ");
+scanf("%d",&a);
+numCheck(a);
+return 0;
+}
+void numCheck(int x)
+{
+
+
+}
+
+Q.N 6 to find the sum of n natural number
+#include<stdio.h>
+int sum(int);
+int main(){
+    int n;
+    printf("Enter any number to find till its sum: ");
+    scanf("%d",&n);
+    sum(n);
+}
+int sum(int x)
+{ int sum=0;
+    for(int i=1; i<=x;i++)
+    {
+        sum+=i;
+    }
+    printf("The sum of %d natural number is : %d ",x,sum);
+}
+
+Q.N . 7 to find the total number of alphates digit and special
+#include<stdio.h>
+#include<string.h>
+int findingDifferent(char anyString[20]);
+int main()
+{ 
+    char anyString[30];
+printf("Enter any string: ");
+gets(anyString);
+ findingDifferent(anyString);
+ return 0;
+}
+int findingDifferent(char name[30])
+{ int alpha=0,digit=0,special=0;
+    for(int i=0;i<strlen(name);i++)
+{
+    if((name[i]>='a' && name[i]<='z') || (name[i]>='A' && name[i]<='Z'))
+    {
+        alpha++;
+    }
+    else if(name[i] >='0' && name[i] <= '9')
+    {
+        digit++;
+    }
+    else
+    {
+        special++;
+    }
+} 
+printf("Total alphabets are :%d\n",alpha);
+printf("Total digits  are :%d\n",digit);
+printf("Total special characters are :%d\n",special);
+}
+
+Q.N 8 to check whether the enter string is palindrome or not using functions
+#include<stdio.h>
+#include<string.h>
+char palindrome(char string[]);
+int main()
+{ char string[20];
+printf("Enter any string: ");
+gets(string);
+palindrome(string);
+return 0;
+}
+char palindrome(char name[]){
+    char copied[20];
+    strcpy(copied,name);
+    if(strcmp(name, strrev(copied))==0)
+    {
+        printf("Enter string is palindrome");
+    }
+    else
+    {
+        printf("Enter string is not Palindrome");
+    }
+}
+
+Q.N 9. Factorial of any input number using function in c programming  
+#include<stdio.h>
+int factorial(int);
+int main()
+{
+     int n,result;
+printf("Enter the num : ");
+scanf("%d",&n);
+//result=factorial(n);
+printf("The factorial of the enter number is %d! is  : %d ",n,factorial(n));
+    return 0;
+}
+int factorial(int x)
+{ 
+    int fact=1;
+ for( int i=1;i<=x;i++)
+ {
+    fact=fact*i;
+ }
+   return fact;
+} 
+
+Q.n 10 to find the prime numbers form 1 to 100 using function
+#include<stdio.h>
+int prime(int n)
+{ int a=3
+
+}
+int main(){
+
+
+
+
+
+
+    return 0;
+}
+ */ 
+
+// factorial using recursion 
+
+/* #include<stdio.h>
+int factorial(int);
+int main()
+{ 
+    int n,result;
+printf("Enter any number: ");
+scanf("%d",&n);
+result=factorial(n);
+printf("The factorial of enter number %d is %d",n,result);
+    return 0;
+}
+int factorial(int x)
+{ 
+    int factorial_of_number;
+int i=1;
+    if(x==0 ||  x==1)
+{
+    return 1;
+}
+else
+factorial_of_number=x*factorial(x-i);
+return factorial_of_number;
+} */ 
